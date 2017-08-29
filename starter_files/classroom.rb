@@ -2,6 +2,8 @@
 # for that student and assignment. Note that Ruby counts arrays from 0, but
 # we are referring to them as 1-10.
 def assignment_score(grade_hash, student, assignment_num)
+  scores = grade_hash[student]
+  return scores[assignment_num - 1]
 end
 
 # Given a grade_hash and assignment number, return all scores for that
