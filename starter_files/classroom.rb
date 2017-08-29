@@ -10,6 +10,9 @@ end
 # assignment. Note that Ruby counts arrays from 0, but we are referring to
 # them as 1-10.
 def assignment_scores(grade_hash, assignment_num)
+ grade_hash.map do |student, scores|
+   assignment_score(grade_hash, student, assignment_num)
+ end
 end
 
 # Given a grade_hash and assignment number, return the average score for that
