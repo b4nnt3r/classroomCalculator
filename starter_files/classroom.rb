@@ -56,6 +56,10 @@ end
 # Return a hash of students and their final letter grade, as determined
 # by their average.
 def final_letter_grades(grade_hash)
+grade.hash.transform_values do |scores|
+  average = scores.sum / scores.length
+  letter_grade(scores.sum / scores.length)
+  end
 end
 
 # Return the average for the entire class.
