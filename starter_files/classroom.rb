@@ -56,7 +56,7 @@ end
 # Return a hash of students and their final letter grade, as determined
 # by their average.
 def final_letter_grades(grade_hash)
-grade.hash.transform_values do |scores|
+grade_hash.transform_values do |scores|
   average = scores.sum / scores.length
   letter_grade(scores.sum / scores.length)
   end
@@ -65,7 +65,8 @@ end
 # Return the average for the entire class.
 def class_average(grade_hash)
   hash = averages(grade_hash)
-  average_scores = hash.value
+  puts hash
+  average_scores = hash.values
   return average_scores.sum / average_scores.length
 end
 
@@ -74,5 +75,6 @@ def top_students(grade_hash, number_of_students)
   hash_of_averages = averages(grade_hash)
   sorted_hash_of_averages = hash_of_averages.sort_by { |student, average| -average }
   top_students = sorted_hash_of_averages.first(number_of_students)
-  return top_students.to_h.keys.
+  return top_students.to_h.keys
 end
+# end
