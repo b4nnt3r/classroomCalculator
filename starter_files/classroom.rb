@@ -64,8 +64,15 @@ end
 
 # Return the average for the entire class.
 def class_average(grade_hash)
+  hash = averages(grade_hash)
+  average_scores = hash.value
+  return average_scores.sum / average_scores.length
 end
 
 # Return an array of the top `number_of_students` students.
 def top_students(grade_hash, number_of_students)
+  hash_of_averages = averages(grade_hash)
+  sorted_hash_of_averages = hash_of_averages.sort_by { |student, average| -average }
+  top_students = sorted_hash_of_averages.first(number_of_students)
+  return top_students.to_h.keys.
 end
